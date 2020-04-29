@@ -1,0 +1,13 @@
+h1{
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    font-size: 70px;
+    font-weight: 10px;
+    
+}
+
+#play-buttons{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
