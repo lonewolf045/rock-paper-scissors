@@ -1,3 +1,4 @@
+let result = "";
 function computerPlay () {
     let choiceArr = ["Rock","Paper","Scissors"];
     let choice = Math.floor(Math.random() * 3);
@@ -23,7 +24,7 @@ function playRound (playerSelection , computerSelection) {
         message = `You loose! ${computerSelection} beats ${playerSelection}.`;
         count = 0;
     }
-    return { "message" : message, "count" : count };
+    result = message;
 }
 
 function game(event) {
@@ -32,12 +33,24 @@ function game(event) {
     playerSelection = event.target.alt;
     console.log(event.target);
     computerSelection = computerPlay();
-    let result = playRound(playerSelection, computerSelection);
+    playRound(playerSelection, computerSelection);
     //score += result.count;
-    alert(result.message);
+    //alert(result);
+    const div = document.querySelector('#result');
+    const plea = document.querySelector('.result');
+    console.log(plea);
+    if( plea !== null) {
+        plea.textContent = result;
+    } else {  
+        const p = document.createElement('p');
+        p.classList.add('result');
+        p.textContent = result;
+        div.appendChild(p);
+    }
     //console.log("Game Over!!!!");
     //console.log(`Your score: ${score}`);
 }
 
 const start = document.getElementById('play-buttons');
+start.currentTime = 0;
 start.addEventListener('click',game);

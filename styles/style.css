@@ -11,3 +11,10 @@ h1{
     display: flex;
     justify-content: center;
 }
+
+.result{
+    font-size: 20px; 
+    font-weight: 10px; 
+    padding: 30px;
+    text-align: center;
+}
